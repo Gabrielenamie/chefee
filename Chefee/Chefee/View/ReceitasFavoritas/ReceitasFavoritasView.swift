@@ -8,44 +8,34 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct ReceitasFavoritasView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Receita.nome, ascending: true)],
         animation: .default)
-    private var items: FetchedResults<Item>
+    
+    private var receitas: FetchedResults<Receita>
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+            List{
+                ForEach(receitas) { receita in
+                    NavigationLink(destination: DetalhesDaReceitaView(receita: receita)){
+                            cardComidaView(receita: receita)
+                                .padding()
                     }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-            Text("Select an item")
+                }.onDelete(perform: deleteItems)
+                
+            }.navigationTitle("Favoritadas")
+            
         }
     }
 
     private func addItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newReceita = Receita(context: viewContext)
+            newReceita.nome = "nome"
 
             do {
                 try viewContext.save()
@@ -60,7 +50,7 @@ struct ContentView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
+            offsets.map { receitas[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
@@ -74,15 +64,8 @@ struct ContentView: View {
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ReceitasFavoritasView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

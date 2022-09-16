@@ -14,8 +14,17 @@ struct PersistenceController {
         let result = PersistenceController(inMemory: true)
         let viewContext = result.container.viewContext
         for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+            let newReceita = Receita(context: viewContext)
+            newReceita.nome = "Macarrão"
+            newReceita.notaDoAutor = 4.5
+            newReceita.modoDePreparo = "Coloque tudo na panela e mecha"
+            newReceita.tempoDeDuracao = "2 horas"
+            
+            let ingrediente = Ingrediente(context: viewContext)
+            ingrediente.quantidade = 2
+            ingrediente.nome = "tomate"
+            newReceita.ingredientes = [ingrediente]
+            
         }
         do {
             try viewContext.save()
