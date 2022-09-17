@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ReceitasFavoritasView: View {
+    @State private var searchText = ""
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -27,7 +29,9 @@ struct ReceitasFavoritasView: View {
                     }
                 }.onDelete(perform: deleteItems)
                 
-            }.navigationTitle("Favoritadas")
+            }
+            .searchable(text: $searchText, prompt: "Look for something")
+            .navigationTitle("Favoritadas")
             
         }
     }
