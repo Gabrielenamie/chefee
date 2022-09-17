@@ -13,8 +13,27 @@ struct ChefeeApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            TabView{
+                HomeView()
+                    .tabItem {
+                        Label("Home", systemImage: "house")
+                    }
+
+                GeladeiraView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("Geladeira", systemImage: "fork.knife")
+                    }
+
+                ReceitasFavoritasView()
+                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                    .tabItem {
+                        Label("favoritas", systemImage: "star")
+                    }
+                
+
+            }
+            
         }
     }
 }
