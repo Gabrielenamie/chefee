@@ -23,10 +23,11 @@
     "lib": ["ESNext"],
     "target": "ES6",
     "rootDir": ".",
-    "baseUrl": "./src",
+    "baseUrl": ".",
     "outDir": "./dist",
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./src/*"],
+      "@/tests/*": ["./tests/*"]
     }
   },
   "exclude": ["node_modules"],

@@ -8,6 +8,7 @@ module.exports = {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
   },
   moduleNameMapper: {
+    '@/tests/(.*)': '<rootDir>/tests/$1',
     '@/(.*)': '<rootDir>/src/$1',
   },
   testPathIgnorePatterns: ['<rootDir>/node_modules'],
