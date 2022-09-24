@@ -4,6 +4,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "devDependencies": {
+    "@types/jest": "^29.0.3",
     "@types/node": "^18.7.20",
     "@typescript-eslint/eslint-plugin": "^5.38.0",
     "@typescript-eslint/parser": "^5.38.0",
@@ -17,8 +18,10 @@
     "eslint-plugin-promise": "^6.0.1",
     "git-commit-msg-linter": "^4.2.1",
     "husky": "^8.0.1",
+    "jest": "^29.0.3",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "ts-jest": "^29.0.2",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.7.0",
     "tsconfig-paths": "^4.1.0",
@@ -29,6 +32,9 @@
     "start": "ts-node -P tsconfig.json src/index.ts",
     "build": "tsc --project tsconfig.json && tsconfig-replace-paths --project tsconfig.json",
     "postinstall": "husky install",
-    "lint": "lint-staged"
+    "test": "jest --passWithNoTests --runInBand --no-cache",
+    "test:watch": "yarn test -- --watch",
+    "test:ci": "yarn test -- --coverage",
+    "test:staged": "yarn test -- --findRelatedTests"
   }
 }

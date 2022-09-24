@@ -1,8 +1,4 @@
-import { Test } from '@/modules/test';
+import { Mock } from '@/modules/mock';
 
-console.log('oiiiii');
-console.log('oiiiii');
-console.log('oiiiii');
-const test = new Test(2);
+const test = new Mock(2);
 test.execute();
-console.log('oiiiii');

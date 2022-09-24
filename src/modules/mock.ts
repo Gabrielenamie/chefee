@@ -1,4 +1,4 @@
-export class Test {
+export class Mock {
   constructor(private readonly test: number) {}
 
   execute(): void {

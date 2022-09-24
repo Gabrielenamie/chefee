@@ -1,4 +1,4 @@
 {
   "*.{json, ts}": "prettier --write",
-  "*.ts": ["eslint --fix"]
+  "*.ts": ["eslint --fix", "yarn test:staged"]
 }
