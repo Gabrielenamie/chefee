@@ -1,4 +1,4 @@
-import { Mock } from './mock';
+import { Mock } from '@/modules/mock';
 
 describe('Mock', () => {
   it('Should console.log on execute', () => {

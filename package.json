@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "ts-node -P tsconfig.json src/index.ts",
-    "build": "tsc --project tsconfig.json && tsconfig-replace-paths --project tsconfig.json",
+    "build": "tsc --project tsconfig.prod.json && tsconfig-replace-paths --project tsconfig.prod.json",
     "postinstall": "husky install",
     "test": "jest --passWithNoTests --runInBand --no-cache",
     "test:watch": "yarn test --watch",
