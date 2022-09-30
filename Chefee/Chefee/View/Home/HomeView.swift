@@ -10,15 +10,28 @@ import SwiftUI
 struct HomeView: View {
     @State private var searchText = ""
     var receitas: [Receita]
+    
+    var comidasPaises = ["Comida japonesa", "Comida francesa", "Comida Italiana"]
     var body: some View {
-        NavigationView
+        NavigationView {
+            VStack{
             ScrollView(.horizontal) {
                 HStack {
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                    Text("Hello, World!")
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-                    Text("Hello, World!")
-                    Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+                    ForEach(0..<comidasPaises.count){ comidas in
+                        ZStack {
+                            Image(comidasPaises[comidas])
+                                .resizable()
+                                .scaledToFit()
+                            Color.black.opacity(0.3)
+                            Text(comidasPaises[comidas])
+                                .foregroundColor(.white)
+                                .bold()
+                                .font(.title)
+                        }
+                        .frame(width: 330, height: 170, alignment: .center)
+                        .cornerRadius(12)
+                                .padding()
+                    }
                 }
             }
             List{
@@ -33,8 +46,10 @@ struct HomeView: View {
             .navigationTitle("Favoritadas")
             
         }
+        }
     }
 }
+
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
