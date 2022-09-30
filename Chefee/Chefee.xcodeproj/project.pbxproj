@@ -91,6 +91,7 @@
 		061FFD4528CABC73003F9FDA /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				06F7290B28DE89A60064ADA4 /* New Group */,
 				061FFD4628CABC89003F9FDA /* HomeView.swift */,
 			);
 			path = Home;
@@ -151,6 +152,13 @@
 				061FFD6A28CC0EE3003F9FDA /* cardIngredienteView.swift */,
 			);
 			path = Geladeira;
+			sourceTree = "<group>";
+		};
+		06F7290B28DE89A60064ADA4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

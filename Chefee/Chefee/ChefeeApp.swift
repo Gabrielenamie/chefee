@@ -14,7 +14,7 @@ struct ChefeeApp: App {
     var body: some Scene {
         WindowGroup {
             TabView{
-                HomeView()
+                HomeView(receitas: [])
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
