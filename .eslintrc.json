@@ -3,5 +3,8 @@
   "plugins": ["prettier"],
   "parserOptions": {
     "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": "off"
   }
 }
