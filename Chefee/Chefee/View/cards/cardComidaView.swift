@@ -16,7 +16,7 @@ struct cardComidaView: View {
             }
             VStack {
                 HStack {
-                    Text(receita.nome ?? "Bicoito")
+                    Text(receita.nome ?? "Biscoito")
                         .bold()
                         .font(.title2)
                         .padding([.leading])
