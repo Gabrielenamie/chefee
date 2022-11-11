@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct HomeView: View {
     @State private var searchText = ""
@@ -44,8 +45,7 @@ struct HomeView: View {
             }
             .searchable(text: $searchText, prompt: "Look for something")
             .navigationTitle("Favoritadas")
-            
-        }
+            }
         }
     }
 }

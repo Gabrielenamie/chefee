@@ -25,6 +25,17 @@ struct PersistenceController {
             ingrediente.nome = "tomate"
             newReceita.ingredientes = [ingrediente]
             
+            let newReceita1 = Receita(context: viewContext)
+            newReceita1.nome = "Sushi"
+            newReceita1.notaDoAutor = 4.5
+            newReceita1.modoDePreparo = "Coloque tudo no prato e mecha"
+            newReceita1.tempoDeDuracao = "10 horas"
+            
+            let ingrediente1 = Ingrediente(context: viewContext)
+            ingrediente1.quantidade = 2
+            ingrediente1.nome = "Peixe"
+            newReceita1.ingredientes = [ingrediente]
+            
         }
         do {
             try viewContext.save()
