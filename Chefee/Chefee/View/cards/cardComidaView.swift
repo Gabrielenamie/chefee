@@ -40,14 +40,14 @@ struct cardComidaView: View {
     }
 }
 
-struct cardComidaView_Previews: PreviewProvider {
-    static var previews: some View {
-//        let r: Receita = {
-//            let r = Receita()
-//            r.notaDoAutor = 5.0
-//            return r
-//        }()
-        
-        cardComidaView(receita: Receita())
-    }
-}
+//struct cardComidaView_Previews: PreviewProvider {
+//    static var previews: some View {
+////        let r: Receita = {
+////            let r = Receita()
+////            r.notaDoAutor = 5.0
+////            return r
+////        }()
+//        
+//        cardComidaView(receita: Receita())
+//    }
+//}
