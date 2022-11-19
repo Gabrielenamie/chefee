@@ -23,7 +23,7 @@ struct cardComidaView: View {
                     Spacer()
                 }
                 HStack {
-                    Text("Tempo de duração: \(receita.tempoDeDuracao ?? "45 mim")")
+                    Text("Tempo de duração: \(receita.tempoDeDuracao ?? "45 min")")
                         .padding([.leading])
                         .font(.caption)
                     Spacer()

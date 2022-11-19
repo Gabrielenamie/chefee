@@ -12,7 +12,7 @@ struct HomeView: View {
     @State private var searchText = ""
     var receitas: [Receita]
     
-    var comidasPaises = ["Comida japonesa", "Comida francesa", "Comida Italiana"]
+    var comidasPaises = ["Comida Japonesa", "Comida Francesa", "Comida Italiana", "Comida Coreana", "Comida Brasileira", "Comida Turca"]
     var body: some View {
         NavigationView {
             VStack{
