@@ -10,4 +10,7 @@ enum EnumComidasPaises: String{
     case japonesa = "Comida japonesa"
     case francesa = "Comida francesa"
     case italina = "Comida italiana"
+    case brasileira = "Comida brasileira"
+    case turca = "Comida Turca"
 }
+
