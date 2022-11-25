@@ -21,6 +21,10 @@ struct DetalhesDaReceitaView: View {
             if let image = UIImage(systemName: "plus"){
                 Image(uiImage: image)
             }
+            receita.image ?? Image("sushi")
+                .aspectRatio(contentMode: .fit) as! Image
+          //      .resizable() as! Image
+                
             Text(receita.nome ?? "Bolo")
                 .font(.title)
                 .bold()
@@ -41,7 +45,7 @@ struct DetalhesDaReceitaView: View {
                 .padding([.top,.leading,.trailing])
             ForEach(0 ..< receita.ingredientes.count){ index in
                 HStack{
-                    Text("\(receita.quantidade[index]) \(receita.ingredientes[index].nome ?? "Bolo")")
+                    Text("\(receita.quantidade[index]) \(receita.ingredientes[index].nome )")
                         .frame(maxWidth:.infinity, alignment: .leading)
                         .padding([.leading,.trailing])
                 }
