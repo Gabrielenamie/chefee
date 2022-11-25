@@ -20,11 +20,11 @@
 		061FFD6B28CC0EE3003F9FDA /* cardIngredienteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061FFD6A28CC0EE3003F9FDA /* cardIngredienteView.swift */; };
 		06509DC4291F10A900F3B0EE /* Receita.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DC3291F10A900F3B0EE /* Receita.swift */; };
 		06509DC6291F10B800F3B0EE /* Ingrediente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DC5291F10B800F3B0EE /* Ingrediente.swift */; };
-		06509DCA291F14BE00F3B0EE /* GeladeiraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DC9291F14BE00F3B0EE /* GeladeiraViewModel.swift */; };
-		06509DCE291F14ED00F3B0EE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DCD291F14ED00F3B0EE /* HomeViewModel.swift */; };
 		06509DD0291F2AC700F3B0EE /* ListaDeReceitas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DCF291F2AC700F3B0EE /* ListaDeReceitas.swift */; };
 		06509DD2291F3F0200F3B0EE /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DD1291F3F0200F3B0EE /* DataBase.swift */; };
 		06509DD4291F484100F3B0EE /* EnumComidasPaises.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06509DD3291F484100F3B0EE /* EnumComidasPaises.swift */; };
+		06F16CB129310D5F00CACAE8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F16CAF29310D5F00CACAE8 /* HomeViewModel.swift */; };
+		06F16CB229310D5F00CACAE8 /* GeladeiraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06F16CB029310D5F00CACAE8 /* GeladeiraViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,11 +42,11 @@
 		061FFD6A28CC0EE3003F9FDA /* cardIngredienteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cardIngredienteView.swift; sourceTree = "<group>"; };
 		06509DC3291F10A900F3B0EE /* Receita.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receita.swift; sourceTree = "<group>"; };
 		06509DC5291F10B800F3B0EE /* Ingrediente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingrediente.swift; sourceTree = "<group>"; };
-		06509DC9291F14BE00F3B0EE /* GeladeiraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeladeiraViewModel.swift; sourceTree = "<group>"; };
-		06509DCD291F14ED00F3B0EE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06509DCF291F2AC700F3B0EE /* ListaDeReceitas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListaDeReceitas.swift; sourceTree = "<group>"; };
 		06509DD1291F3F0200F3B0EE /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		06509DD3291F484100F3B0EE /* EnumComidasPaises.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumComidasPaises.swift; sourceTree = "<group>"; };
+		06F16CAF29310D5F00CACAE8 /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		06F16CB029310D5F00CACAE8 /* GeladeiraViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeladeiraViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,9 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				061FFD3228CAB4D9003F9FDA /* ChefeeApp.swift */,
-				06509DC8291F14A400F3B0EE /* ViewModel */,
 				061FFD6728CC0B4A003F9FDA /* CoreData */,
 				06509DC2291F0F9300F3B0EE /* Model */,
+				06F16CAE29310D5F00CACAE8 /* ViewModel */,
 				061FFD6628CC0B33003F9FDA /* View */,
 				061FFD3628CAB4DB003F9FDA /* Assets.xcassets */,
 				061FFD3828CAB4DB003F9FDA /* Preview Content */,
@@ -96,22 +96,6 @@
 				061FFD3928CAB4DB003F9FDA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		061FFD4528CABC73003F9FDA /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				061FFD4628CABC89003F9FDA /* HomeView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		061FFD4828CABCE5003F9FDA /* ReceitasFavoritas */ = {
-			isa = PBXGroup;
-			children = (
-				061FFD3428CAB4D9003F9FDA /* ReceitasFavoritasView.swift */,
-			);
-			path = ReceitasFavoritas;
 			sourceTree = "<group>";
 		};
 		061FFD4928CABD28003F9FDA /* cards */ = {
@@ -156,13 +140,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		06509DC8291F14A400F3B0EE /* ViewModel */ = {
+		06F16CAE29310D5F00CACAE8 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				06509DC9291F14BE00F3B0EE /* GeladeiraViewModel.swift */,
-				06509DCD291F14ED00F3B0EE /* HomeViewModel.swift */,
+				06F16CAF29310D5F00CACAE8 /* HomeViewModel.swift */,
+				06F16CB029310D5F00CACAE8 /* GeladeiraViewModel.swift */,
 			);
-			path = Geladeira;
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,12 +228,12 @@
 				061FFD4728CABC89003F9FDA /* HomeView.swift in Sources */,
 				06509DC6291F10B800F3B0EE /* Ingrediente.swift in Sources */,
 				061FFD3F28CAB4DB003F9FDA /* Chefee.xcdatamodeld in Sources */,
-				06509DCE291F14ED00F3B0EE /* HomeViewModel.swift in Sources */,
 				06509DD0291F2AC700F3B0EE /* ListaDeReceitas.swift in Sources */,
-				06509DCA291F14BE00F3B0EE /* GeladeiraViewModel.swift in Sources */,
 				06509DD4291F484100F3B0EE /* EnumComidasPaises.swift in Sources */,
 				061FFD4D28CAC63D003F9FDA /* DetalhesDaReceitaView.swift in Sources */,
 				061FFD4B28CABD56003F9FDA /* cardComidaView.swift in Sources */,
+				06F16CB229310D5F00CACAE8 /* GeladeiraViewModel.swift in Sources */,
+				06F16CB129310D5F00CACAE8 /* HomeViewModel.swift in Sources */,
 				06509DD2291F3F0200F3B0EE /* DataBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
