@@ -10,7 +10,7 @@ import SwiftUI
 
 class Receita: Identifiable {
     var id: UUID
-    var image: Image
+    var image: String
     var modoDePreparo: String
     var nome: String
     var tempoDeDuracao: String
@@ -19,7 +19,7 @@ class Receita: Identifiable {
     var ingredientes: [Ingrediente]
     var categoria: String
     
-    init( modoDePreparo: String, nome: String, tempoDeDuracao: String, image: Image, notaDoAutor: Float, ingredientes: [Ingrediente], quantidade: [String], categoria: String) {
+    init( modoDePreparo: String, nome: String, tempoDeDuracao: String, image: String, notaDoAutor: Float, ingredientes: [Ingrediente], quantidade: [String], categoria: String) {
         self.id = UUID()
         self.modoDePreparo = modoDePreparo
         self.image = image

@@ -14,9 +14,6 @@ struct cardIngredienteView: View {
         ZStack{
             Color(color)
             HStack{
-                if let image = UIImage(systemName: "plus"){
-                    Image(uiImage: image)
-                }
                 Text(ingrediente.nome ?? "maracuja")
                 Spacer()
             }

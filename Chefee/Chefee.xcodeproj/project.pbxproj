@@ -98,14 +98,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		061FFD4928CABD28003F9FDA /* cards */ = {
-			isa = PBXGroup;
-			children = (
-				061FFD4A28CABD56003F9FDA /* cardComidaView.swift */,
-			);
-			path = cards;
-			sourceTree = "<group>";
-		};
 		061FFD6628CC0B33003F9FDA /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +107,7 @@
 				061FFD6428CC0B18003F9FDA /* GeladeiraView.swift */,
 				061FFD3428CAB4D9003F9FDA /* ReceitasFavoritasView.swift */,
 				06509DCF291F2AC700F3B0EE /* ListaDeReceitas.swift */,
-				061FFD4928CABD28003F9FDA /* cards */,
+				061FFD4A28CABD56003F9FDA /* cardComidaView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";

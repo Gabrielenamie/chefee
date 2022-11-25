@@ -17,13 +17,10 @@ struct DetalhesDaReceitaView: View {
     }
     
     var body: some View {
-        VStack{
-            if let image = UIImage(systemName: "plus"){
-                Image(uiImage: image)
-            }
-            receita.image ?? Image("sushi")
-                .aspectRatio(contentMode: .fit) as! Image
-          //      .resizable() as! Image
+        ScrollView{
+            Image(receita.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 
             Text(receita.nome ?? "Bolo")
                 .font(.title)

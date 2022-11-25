@@ -11,19 +11,20 @@ struct cardComidaView: View {
     var receita: Receita
     var body: some View {
         HStack{
-            if let image = UIImage(systemName: "plus"){
-                Image(uiImage: image)
-            }
+            Image(receita.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 50, height: 50)
             VStack {
                 HStack {
-                    Text(receita.nome ?? "Biscoito")
+                    Text(receita.nome)
                         .bold()
                         .font(.title2)
                         .padding([.leading])
                     Spacer()
                 }
                 HStack {
-                    Text("Tempo de duração: \(receita.tempoDeDuracao ?? "45 min")")
+                    Text("Tempo de duração: \(receita.tempoDeDuracao)")
                         .padding([.leading])
                         .font(.caption)
                     Spacer()
