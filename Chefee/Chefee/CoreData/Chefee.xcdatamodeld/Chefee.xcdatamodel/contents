@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Geladeira" representedClassName=".Geladeira" syncable="YES" codeGenerationType="category">
-        <relationship name="ingredientes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingrediente"/>
-    </entity>
-    <entity name="Ingrediente" representedClassName=".Ingrediente" syncable="YES" codeGenerationType="category">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21512" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoreDataIngrediente" representedClassName=".CoreDataIngrediente" syncable="YES" codeGenerationType="class">
+        <attribute name="estaNaGeladeira" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="quantidade" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Receita" representedClassName=".Receita" syncable="YES" codeGenerationType="category">
+    <entity name="CoreDataReceita" representedClassName=".CoreDataReceita" syncable="YES" codeGenerationType="class">
         <attribute name="modoDePreparo" optional="YES" attributeType="String"/>
         <attribute name="nome" optional="YES" attributeType="String"/>
         <attribute name="notaDoAutor" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="tempoDeDuracao" optional="YES" attributeType="String"/>
-        <relationship name="ingredientes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Ingrediente"/>
+        <relationship name="ingredientes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoreDataIngrediente"/>
     </entity>
-    <elements>
-        <element name="Geladeira" positionX="-45" positionY="36" width="128" height="44"/>
-        <element name="Ingrediente" positionX="-63" positionY="18" width="128" height="59"/>
-        <element name="Receita" positionX="-63" positionY="-18" width="128" height="104"/>
-    </elements>
 </model>

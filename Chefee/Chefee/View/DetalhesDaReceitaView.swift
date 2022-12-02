@@ -9,11 +9,19 @@ import SwiftUI
 
 struct DetalhesDaReceitaView: View {
     var receita: Receita
+    @State var estaFavoritado: Bool
+    
+    init(receita: Receita) {
+        self.receita = receita
+        self.estaFavoritado = DataBase.shared.recitasFavoritadas.contains(where: { r in r.id == receita.id })
+    }
+    
     var body: some View {
-        VStack{
-            if let image = UIImage(systemName: "plus"){
-                Image(uiImage: image)
-            }
+        ScrollView{
+            Image(receita.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                
             Text(receita.nome ?? "Bolo")
                 .font(.title)
                 .bold()
@@ -32,13 +40,12 @@ struct DetalhesDaReceitaView: View {
                 .bold()
                 .frame(maxWidth:.infinity, alignment: .leading)
                 .padding([.top,.leading,.trailing])
-            ForEach(receita.arrayIngredientes()){ ingrediente in
+            ForEach(0 ..< receita.ingredientes.count){ index in
                 HStack{
-                    Text("\(ingrediente.quantidade) \(ingrediente.nome ?? "Bolo")")
+                    Text("\(receita.quantidade[index]) \(receita.ingredientes[index].nome )")
                         .frame(maxWidth:.infinity, alignment: .leading)
                         .padding([.leading,.trailing])
                 }
-                
             }
             Text("Modo de preparo:")
                 .font(.title2)
@@ -49,14 +56,31 @@ struct DetalhesDaReceitaView: View {
                 .frame(maxWidth:.infinity, alignment: .leading)
                 .padding([.leading,.trailing])
             Spacer()
-            
-            
+        }
+        .toolbar {
+            Button {
+                if !estaFavoritado {
+                    DataBase.shared.recitasFavoritadas.append(receita)
+                } else{
+                    DataBase.shared.recitasFavoritadas.removeAll { r in
+                        r.id == receita.id
+                    }
+                }
+                estaFavoritado.toggle()
+            } label: {
+                if !estaFavoritado {
+                    Image(systemName: "heart")
+                } else{
+                    Image(systemName: "heart.fill")
+                }
+                
+            }
         }
     }
 }
 
-struct DetalhesDaReceitaView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetalhesDaReceitaView(receita: Receita())
-    }
-}
+//struct DetalhesDaReceitaView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DetalhesDaReceitaView(receita: Receita())
+//    }
+//}
